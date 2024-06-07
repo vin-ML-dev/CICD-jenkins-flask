@@ -14,8 +14,9 @@ pipeline {
         stage('setup-env') {
             steps {
                 echo 'Install dependencies'
-                sh 'apt-get install python3-pip'
-                sh 'python3 -m pip install -r requirements.txt'
+                sh 'python3 -m venv myenv'
+                sh 'source myenv/bin/activate'
+                sh 'pip install -r requirements.txt'
             }
         }
         stage('Train') {
