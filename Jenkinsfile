@@ -11,7 +11,12 @@ pipeline {
     
     stages {
         /* We do not need a stage for checkout here since it is done by default when using "Pipeline script from SCM" option. */
-        
+        stage('setup-env') {
+            steps {
+                echo 'Install dependencies'
+                sh 'python3 -m pip install -r requirements.txt'
+            }
+        }
         stage('Train') {
             steps {
                 echo 'Training model..'
