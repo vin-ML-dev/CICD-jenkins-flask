@@ -25,7 +25,7 @@ pipeline {
                 sh 'docker stop $CONTAINER_NAME || true'
                 sh 'docker rm $CONTAINER_NAME || true'
                 
-                sh 'docker run -d -it --name $CONTAINER_NAME -p 5000:5000 $DOCKER_HUB_REPO bash '
+                sh 'docker run -d -it --name $CONTAINER_NAME -p 8005:8005 $DOCKER_HUB_REPO bash '
               }
         }
         stage('Train') {
