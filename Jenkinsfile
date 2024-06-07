@@ -15,13 +15,13 @@ pipeline {
         stage('Train') {
             steps {
                 echo 'Training model..'
-                sh 'python train.py'
+                sh 'python3 train.py'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing model on test data'
-                 sh 'python test_model.py'
+                 sh 'python3 test_model.py'
                 
             }
         }
